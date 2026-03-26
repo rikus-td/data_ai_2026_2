@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/data_ai_2026",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/data_ai_2026",
+      "destination": "/index.html"
+    }
+  ]
+}
