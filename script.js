@@ -12,6 +12,32 @@ const speakerData = {
   minimax: { name: "MiniMax 登壇者", company: "MiniMax", img: "image/minimax.png", bio: "中国発、世界をリードする大規模言語モデル（LLM）とAIエージェントの開発チーム。" }
 };
 
+const HUBSPOT_FORM_CONFIG = {
+  region: "na2",
+  portalId: "22367406",
+  formId: "954f622e-147b-4460-b60f-8cc6bde52a23",
+  target: "#hubspot-form"
+};
+
+const SOURCE_FIELD_NAME_CANDIDATES = [
+  "ryuunyuupeji",
+  "liuru_page",
+  "liurupeji",
+  "ryuunyu_page",
+  "ryuunyupeji",
+  "ryunyu_page",
+  "ryunyupeji",
+  "inflow_page",
+  "page_url",
+  "entry_source",
+  "source",
+  "lead_source"
+];
+const SOURCE_LABEL_TEXT = "流入ページ";
+const CONSENT_CHECKBOX_ID = "privacy-consent-checkbox";
+const CONSENT_ERROR_ID = "form-consent-error";
+const CONSENT_REQUIRED_MESSAGE = "個人情報の取り扱いへの同意が必要です。";
+
 function openModal(id) {
   const data = speakerData[id];
   if (!data) return;
@@ -98,3 +124,122 @@ document.addEventListener('mousemove', (e) => {
     blob.style.transform = `translate(${e.clientX - 300}px, ${e.clientY - 300}px)`;
   }
 });
+
+function updateSourcePageOnForm(formRoot) {
+  if (!formRoot) return;
+  const sourceValue = window.location.href;
+
+  const byCandidate = SOURCE_FIELD_NAME_CANDIDATES.find((fieldName) => {
+    const field = formRoot.querySelector(`[name="${fieldName}"]`);
+    if (!field) return false;
+    field.value = sourceValue;
+    field.dispatchEvent(new Event('input', { bubbles: true }));
+    field.dispatchEvent(new Event('change', { bubbles: true }));
+    const fieldWrap = field.closest('.hs-form-field');
+    if (fieldWrap) fieldWrap.style.display = 'none';
+    return true;
+  });
+
+  if (byCandidate) return;
+
+  const allLabels = Array.from(formRoot.querySelectorAll('label'));
+  const sourceLabel = allLabels.find((label) => label.textContent && label.textContent.includes(SOURCE_LABEL_TEXT));
+  if (sourceLabel) {
+    const fieldWrap = sourceLabel.closest('.hs-form-field');
+    const field = fieldWrap && fieldWrap.querySelector('input, select, textarea');
+    if (field) {
+      field.value = sourceValue;
+      field.dispatchEvent(new Event('input', { bubbles: true }));
+      field.dispatchEvent(new Event('change', { bubbles: true }));
+      fieldWrap.style.display = 'none';
+    }
+  }
+}
+
+function bindConsentGuard(formRoot) {
+  if (!formRoot || formRoot.dataset.consentGuardBound === '1') return;
+
+  const consentCheckbox = document.getElementById(CONSENT_CHECKBOX_ID);
+  const consentError = document.getElementById(CONSENT_ERROR_ID);
+  if (!consentCheckbox) return;
+
+  const clearError = () => {
+    if (consentError) consentError.textContent = '';
+  };
+
+  formRoot.addEventListener('submit', (event) => {
+    if (consentCheckbox.checked) {
+      clearError();
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    if (consentError) consentError.textContent = CONSENT_REQUIRED_MESSAGE;
+    consentCheckbox.focus();
+  }, true);
+
+  consentCheckbox.addEventListener('change', () => {
+    if (consentCheckbox.checked) clearError();
+  });
+
+  formRoot.dataset.consentGuardBound = '1';
+}
+
+function getEmbeddedFormRoot() {
+  const iframe = document.querySelector('#hubspot-form iframe');
+  if (!iframe || !iframe.contentWindow || !iframe.contentWindow.document) return null;
+  return iframe.contentWindow.document.querySelector('form');
+}
+
+function resolveFormRoot(formArg) {
+  if (formArg && formArg[0] && formArg[0].tagName === 'FORM') return formArg[0];
+  if (formArg && formArg.tagName === 'FORM') return formArg;
+  return getEmbeddedFormRoot();
+}
+
+function withResolvedFormRoot(formArg, callback) {
+  let attempts = 0;
+  const maxAttempts = 30;
+
+  function tryResolve() {
+    const formRoot = resolveFormRoot(formArg);
+    if (formRoot) {
+      callback(formRoot);
+      return;
+    }
+    if (attempts >= maxAttempts) return;
+    attempts += 1;
+    setTimeout(tryResolve, 120);
+  }
+
+  tryResolve();
+}
+
+function initEntryForm() {
+  if (!window.hbspt || !window.hbspt.forms) return;
+
+  window.hbspt.forms.create({
+    ...HUBSPOT_FORM_CONFIG,
+    onFormReady: function onFormReady($form) {
+      withResolvedFormRoot($form, (formRoot) => {
+        updateSourcePageOnForm(formRoot);
+        bindConsentGuard(formRoot);
+      });
+    },
+    onBeforeFormSubmit: function onBeforeFormSubmit($form) {
+      const formRoot = resolveFormRoot($form);
+      updateSourcePageOnForm(formRoot);
+    },
+    onFormSubmit: function onFormSubmit($form) {
+      const formRoot = resolveFormRoot($form);
+      updateSourcePageOnForm(formRoot);
+    }
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initEntryForm);
+} else {
+  initEntryForm();
+}
