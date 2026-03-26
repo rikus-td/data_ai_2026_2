@@ -87,7 +87,7 @@ window.addEventListener('scroll', () => {
   // Header
   const header = document.querySelector('.glass-header');
   if (header) {
-    header.style.padding = scrollY > 50 ? '8px 0' : '20px 0';
+    header.style.padding = '12px 0';
   }
 
   // Sticky Button
