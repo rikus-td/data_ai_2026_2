@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data→AI Meetup 2026 | ThinkingData</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Orbitron:wght@700&family=Roboto:wght@400;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20260326_final_full">
+</head>
+<body class="light-mode">
+  <div class="bg-blob" id="cursor-blob"></div>
+
+  <header class="glass-header">
+    <div class="header-inner container-full">
+      <div class="logo-wrapper">
+        <img src="image/logo-TD-b.svg" alt="ThinkingData" class="logo">
+      </div>
+      <nav class="pc-nav">
+        <a href="#about">MESSAGE</a>
+        <a href="#schedule">SCHEDULE</a>
+        <a href="#speakers">SPEAKERS</a>
+        <a href="#afterparty">AFTER PARTY</a>
+        <a href="#overview">OVERVIEW</a>
+        <a href="#faq">FAQ</a>
+        <a href="#entry-form" class="nav-btn">無料参加登録</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-center">
+      <div class="container">
+        <div class="hero-text-area">
+          <p class="hero-badge">2026.04.17 FRI @ ONARIMON TOWER</p>
+          <h1 class="hero-title">
+            <span class="gradient-text">From Data to AI</span><br>
+            Meetup 2026
+          </h1>
+          <p class="hero-lead">データからAIへ、本物のAIエージェントチームを築け。</p>
+        </div>
+        <div class="hero-visual-center">
+          <img src="image/kv-ai-agents.webp" alt="Key Visual" class="kv-img-wide">
+        </div>
+        <div class="hero-actions-center">
+          <a href="#entry-form" class="btn-primary-large">今すぐ無料で登録する</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="glass-card">
+          <h2 class="section-title">MESSAGE</h2>
+          <div class="message-body">
+            <p class="message-text">
+              <b>データも、チームも、AIツールも揃っている。それでも結果が出ない<br>——その答えを持つ人間たちが、この日だけ集まる。</b><br><br>
+              2026年、ゲーム運営の最前線は「分析」から「AI実装」へとシフトしました。本Meetupでは、業界リーダーたちが集結。現場を動かすための「AIエージェントの実践知」を共有します。
+            </p>
+          </div>
+          <div class="organizer-divider"></div>
+          <div class="organizer-block">
+            <span class="org-label">主催 :</span>
+            <img src="image/logo-TD-b.svg" alt="ThinkingData" class="org-logo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="section bg-light-gray">
+      <div class="container">
+        <h2 class="section-title">SCHEDULE</h2>
+        <div class="timeline">
+          <div class="timeline-item"><div class="timeline-time">12:30</div><div class="timeline-content is-break">受付開始</div></div>
+          
+          <div class="timeline-item">
+            <div class="timeline-time">13:00</div>
+            <div class="timeline-content">
+              <span class="status-tag">Keynote/ AI</span>
+              <h3 class="session-title">ThinkingDataのTE Agentについて</h3>
+              <div class="session-desc-box">Thinking AIに変わるこれからのAI。データ分析のMCPサービスについて語ります。</div>
+              <p class="session-speaker"><span class="clickable-name" onclick="openModal('paris')">Paris</span> (ThinkingAI・CEO)</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">13:20</div>
+            <div class="timeline-content">
+              <span class="status-tag">Keynote/ AI</span>
+              <h3 class="session-title">知見の構造化と自律型AI Agentが導く次世代運営</h3>
+              <div class="session-desc-box">分析から施策実行、評価までを統合する新たな意思決定の標準。</div>
+              <p class="session-speaker"><span class="clickable-name" onclick="openModal('shiraishi')">白石 陸</span> (ThinkingAI)</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">13:50</div>
+            <div class="timeline-content">
+              <span class="status-tag">Session/ AI</span>
+              <h3 class="session-title">MiniMax: Your Multi-modality & Agent Partner</h3>
+              <div class="session-desc-box">中国で数億ユーザーに利用されるAIエージェントの裏側にあるLLM技術。</div>
+              <p class="session-speaker"><span class="clickable-name" onclick="openModal('minimax')">MiniMax</span></p>
+            </div>
+          </div>
+
+          <div class="timeline-item"><div class="timeline-time">--:--</div><div class="timeline-content is-break">休憩 ☕</div></div>
+
+          <div class="timeline-item is-unconfirmed"><div class="timeline-time">14:??</div><div class="timeline-content">
+            <span class="status-tag is-pending">Keynote</span>
+            <h3 class="session-title">特別キーノート（予定）</h3>
+          </div></div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">--:--</div>
+            <div class="timeline-content">
+              <span class="status-tag">Panel / Global</span>
+              <h3 class="session-title">日本タイトルの海外進出について</h3>
+              <p class="session-speaker">
+                <span class="clickable-name" onclick="openModal('kitamura')">北村 有吾</span> (MIXI) / 
+                <span class="clickable-name" onclick="openModal('mino')">美濃 龍之介</span> (ThinkingAI)
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">--:--</div>
+            <div class="timeline-content">
+              <span class="status-tag">Panel / Data</span>
+              <h3 class="session-title">データ分析の「壁」をどう突破するか？</h3>
+              <p class="session-speaker">
+                <span class="clickable-name" onclick="openModal('matsuura')">松浦 遼</span> / <span class="clickable-name" onclick="openModal('hosoda')">細田 誠司</span> / <span class="clickable-name" onclick="openModal('nishikata')">西方 智晃</span> / <span class="clickable-name" onclick="openModal('shiraishi')">白石 陸</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">--:--</div>
+            <div class="timeline-content">
+              <span class="status-tag">Session/ AI</span>
+              <h3 class="session-title">米国市場におけるLiveopsと収益化ベストプラクティス(仮)</h3>
+              <p class="session-speaker"><span class="clickable-name" onclick="openModal('nakamura')">中村 慶光</span> (AppMagic)</p>
+            </div>
+          </div>
+
+          <div class="timeline-item"><div class="timeline-time">--:--</div><div class="timeline-content is-break">休憩 ☕</div></div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">--:--</div>
+            <div class="timeline-content">
+              <span class="status-tag">Panel / AI</span>
+              <h3 class="session-title">AI実装の理想と現実 — 2026年のAI活用最前線</h3>
+              <p class="session-speaker">
+                <span class="clickable-name" onclick="openModal('katou')">加藤 雅大</span> / <span class="clickable-name" onclick="openModal('goda')">郷田 努</span> / <span class="clickable-name" onclick="openModal('shiraishi')">白石 陸</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item"><div class="timeline-time">17:55</div><div class="timeline-content"><h3 class="session-title">締め (5分)</h3></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="speakers" class="section">
+      <div class="container">
+        <h2 class="section-title">SPEAKERS</h2>
+        <div class="speaker-grid">
+          <div class="speaker-card" onclick="openModal('paris')">
+            <div class="speaker-img-box"><img src="image/paris.webp" alt="Paris"></div>
+            <div class="speaker-brief"><p class="s-company">ThinkingData CEO</p><h3 class="s-name">Paris</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+          <div class="speaker-card" onclick="openModal('shiraishi')">
+            <div class="speaker-img-box"><img src="image/shiraishi.webp" alt="白石 陸"></div>
+            <div class="speaker-brief"><p class="s-company">ThinkingAI</p><h3 class="s-name">白石 陸</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+          <div class="speaker-card" onclick="openModal('mino')">
+            <div class="speaker-img-box"><img src="image/mino.webp" alt="美濃 龍之介"></div>
+            <div class="speaker-brief"><p class="s-company">ThinkingAI</p><h3 class="s-name">美濃 龍之介</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+          <div class="speaker-card" onclick="openModal('matsuura')">
+            <div class="speaker-img-box"><img src="image/matsuura.webp" alt="松浦 遼"></div>
+            <div class="speaker-brief"><p class="s-company">バンダイナムコネクサス</p><h3 class="s-name">松浦 遼</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+          <div class="speaker-card" onclick="openModal('kitamura')">
+            <div class="speaker-img-box"><img src="image/kitamura.webp" alt="北村 有吾"></div>
+            <div class="speaker-brief"><p class="s-company">MIXI</p><h3 class="s-name">北村 有吾</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+          <div class="speaker-card" onclick="openModal('nakamura')">
+            <div class="speaker-img-box"><img src="image/nakamura.webp" alt="中村 慶光"></div>
+            <div class="speaker-brief"><p class="s-company">AppMagic</p><h3 class="s-name">中村 慶光</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+          <div class="speaker-card" onclick="openModal('katou')">
+            <div class="speaker-img-box"><img src="image/katou.webp" alt="加藤 雅大"></div>
+            <div class="speaker-brief"><p class="s-company">ワンダープラネット</p><h3 class="s-name">加藤 雅大</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+          <div class="speaker-card" onclick="openModal('goda')">
+            <div class="speaker-img-box"><img src="image/goda.webp" alt="郷田 努"></div>
+            <div class="speaker-brief"><p class="s-company">ビジュアルアーツ</p><h3 class="s-name">郷田 努</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+          <div class="speaker-card" onclick="openModal('hosoda')">
+            <div class="speaker-img-box"><img src="image/hosoda.webp" alt="細田 誠司"></div>
+            <div class="speaker-brief"><p class="s-company">澪標アナリティクス</p><h3 class="s-name">細田 誠司</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+          <div class="speaker-card" onclick="openModal('nishikata')">
+            <div class="speaker-img-box"><img src="image/nishikata.webp" alt="西方 智晃"></div>
+            <div class="speaker-brief"><p class="s-company">リーン-ニシカタ</p><h3 class="s-name">西方 智晃</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+          <div class="speaker-card" onclick="openModal('minimax')">
+            <div class="speaker-img-box"><img src="image/minimax.png" alt="MiniMax"></div>
+            <div class="speaker-brief"><p class="s-company">MiniMax</p><h3 class="s-name">MiniMax 登壇者</h3><span class="view-more">VIEW BIO +</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="afterparty" class="section bg-light-gray">
+      <div class="container">
+        <div class="glass-card after-party-container">
+          <h2 class="section-title">AFTER PARTY <small>18:00〜</small></h2>
+          <div class="party-grid">
+            <div class="party-item">
+              <div class="party-icon">🎮</div>
+              <h3>SF6 対戦会</h3>
+              <p>プロゲーマー・オニキ選手への挑戦。勝利者には限定特典を進呈。</p>
+            </div>
+            <div class="party-item">
+              <div class="party-icon">🎁</div>
+              <h3>限定ガチャ</h3>
+              <p>会場限定のガチャマシンを設置。豪華景品をご用意しています。</p>
+            </div>
+            <div class="party-item">
+              <div class="party-icon">🍻</div>
+              <h3>Networking</h3>
+              <p>登壇者や参加者同士で語り合える、業界の枠を超えた交流の場。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="container">
+        <h2 class="section-title">OVERVIEW</h2>
+        <div class="overview-tiles">
+          <div class="ov-tile">
+            <span class="ov-label">DATE</span>
+            <span class="ov-value">2026.04.17 <small>FRI</small></span>
+          </div>
+          <div class="ov-tile">
+            <span class="ov-label">VENUE</span>
+            <span class="ov-value">御成門タワー</span>
+          </div>
+          <div class="ov-tile">
+            <span class="ov-label">ADMISSION</span>
+            <span class="ov-value">FREE</span>
+          </div>
+        </div>
+        <div class="access-container">
+          <div class="access-info">
+            <h3>会場アクセス</h3>
+            <div class="address-box">
+              <p class="address-main">東京都港区芝公園1-1-1<br>住友不動産御成門タワー</p>
+              <p class="address-sub">都営三田線「御成門駅」A1出口直結</p>
+            </div>
+          </div>
+          <div class="access-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7479754683706!2d139.7512313763757!3d35.65858043121703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bc6f0159709%3A0x6e26922370776b97!2z5L2P5Y-L5LiN6YuV55Sj5b6h5oiQ6ZaA44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1711430000000!5m2!1sja!2sjp" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section bg-light-gray">
+      <div class="container">
+        <h2 class="section-title">FAQ</h2>
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-q">参加対象者を教えてください。</button>
+            <div class="faq-a">ゲームデベロッパー、パブリッシャー、および業界関係者様を対象としております。</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">会場でのWi-Fi提供はありますか？</button>
+            <div class="faq-a">はい。専用のフリーWi-Fiをご用意しております。</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">事前申込は必須ですか？</button>
+            <div class="faq-a">はい。本イベントは完全予約制（抽選）となっております。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="entry-form" class="section">
+      <div class="container">
+        <div class="glass-card form-card">
+          <h2 class="section-title">ENTRY</h2>
+          <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              region: "na2",
+              portalId: "22367406",
+              formId: "954f622e-147b-4460-b60f-8cc6bde52a23"
+            });
+          </script>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <img src="image/logo-TD-b.svg" alt="ThinkingData" class="footer-logo">
+      <p>© 2026 ThinkingData Inc.</p>
+    </div>
+  </footer>
+
+  <div id="sticky-btn" class="sticky-footer-btn">
+    <a href="#entry-form" class="btn-sticky">無料で参加登録する</a>
+  </div>
+
+  <div id="speaker-modal" class="modal-overlay" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      <div class="modal-body">
+        <div class="modal-left"><img id="modal-img" src="" alt="Speaker"></div>
+        <div class="modal-right">
+          <p id="modal-company" class="modal-company"></p>
+          <h3 id="modal-name" class="modal-name"></h3>
+          <div id="modal-bio" class="modal-bio"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
