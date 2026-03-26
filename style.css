@@ -210,11 +210,65 @@ body::before {
 .modal-bio { font-size: 16px; line-height: 1.9; color: var(--text-dim); }
 .close-btn { position: absolute; top: 30px; right: 35px; font-size: 40px; cursor: pointer; border: none; background: none; }
 
-/* Responsive */
+/* Responsive  */
 @media (max-width: 768px) {
+  /* レイアウトの一列化 */
   .party-grid { grid-template-columns: 1fr !important; }
-  .access-container, .overview-tiles, .modal-body { grid-template-columns: 1fr; }
+  .access-container, .overview-tiles { grid-template-columns: 1fr; }
   .pc-nav { display: none; }
   .access-info { padding: 40px 24px; }
-  .modal-left { width: 100%; max-width: 240px; margin-bottom: 30px; }
+
+  /* --- モーダルのスマホ最適化 --- */
+  .modal-content {
+    width: 92%;
+    max-width: none;
+    padding: 40px 20px;
+    max-height: 85vh;    
+    overflow-y: auto;    
+    border-radius: 2px;  
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column; 
+    gap: 24px;
+    align-items: center;
+  }
+
+  .modal-left {
+    width: 100%;
+    max-width: 180px; 
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  #modal-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 2px; 
+  }
+
+  .modal-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal-name {
+    font-size: 26px; 
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .modal-bio {
+    font-size: 14px;
+    text-align: left; 
+    line-height: 1.8;
+  }
+
+  .close-btn {
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+  }
 }
