@@ -6,7 +6,7 @@
   --bg-light: #f8fafc;
   --text-main: #0f172a;
   --text-dim: #64748b;
-  --kv-green: #1ac731;
+  --kv-green: #00FF00;   /* ネオングリーンに変更 */
   --brand-blue: #0047ff;
   --brand-black: #000000;
   --glass: rgba(255, 255, 255, 0.7);
@@ -44,7 +44,7 @@ body::before {
 /* Common Layout */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 .container-full { max-width: 1600px; margin: 0 auto; padding: 0 60px; }
-.section { padding: 40px 0; }
+.section { padding: 80px 0; } /* 40pxから80pxへ余白調整 */
 .bg-light-gray { background: rgba(248, 250, 252, 0.6); }
 
 /* Common UI Elements */
@@ -193,15 +193,16 @@ body::before {
 /* ==========================================================================
    FAQ Section
    ========================================================================== */
-.faq-accordion { max-width: 900px; margin: 0 auto; }
+.faq-accordion { width: 100%; margin: 0 auto; }
 .faq-item { border: 1px solid var(--glass-border); background: #fff; margin-bottom: 16px; border-radius: 16px; }
 .faq-q { width: 100%; text-align: left; padding: 28px; background: none; border: none; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; }
 .faq-a { padding: 0 28px 28px; color: var(--text-dim); display: none; }
+.faq-link { color: var(--brand-blue); text-decoration: underline; font-weight: bold; }
 
 /* ==========================================================================
    Entry Form Section
    ========================================================================== */
-.form-card { max-width: 860px; margin: 0 auto; }
+.form-card { width: 100%; margin: 0 auto; }
 #hubspot-form { margin-top: 12px; }
 .form-consent-block { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--glass-border); }
 .form-consent-label { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.8; color: var(--text-main); }
@@ -281,6 +282,7 @@ body::before {
   .access-container, .overview-tiles { grid-template-columns: 1fr; }
   .pc-nav { display: none; }
   .access-info { padding: 40px 24px; }
+  .container { padding: 0 20px; }
 
   .modal-content { width: 92%; padding: 40px 20px; max-height: 85vh; overflow-y: auto; border-radius: 2px; }
   .modal-body { flex-direction: column; gap: 24px; align-items: center; }
