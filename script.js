@@ -33,9 +33,9 @@ const speakerData = {
   kitamura: { 
     name: "北村 有吾", 
     company: "株式会社MIXI", 
-    title: "", 
+    title: "デジタルエンターテイメントパブリッシング事業本部グローバルモンスト部 部長", 
     img: "image/kitamura.webp", 
-    bio: "" 
+    bio: "複数の企業で新規事業関連のBizDevを経験後、2017年にMIXI社に入社。新規ゲーム開発を担当する事業本部にて、事業企画部長などを歴任。2024年2月より現職に就き、「モンスターストライク」の海外展開プロジェクトの事業責任者を務める。" 
   },
   nakamura: { 
     name: "中村 慶光", 
