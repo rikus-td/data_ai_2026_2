@@ -169,11 +169,18 @@ window.addEventListener('scroll', () => {
     header.style.padding = '12px 0';
   }
 
-  // Floating Sticky Button Visibility
+  // Floating Sticky Button Visibility (修正箇所)
+// --- ここから統合・修正 ---
   const stickyBtn = document.getElementById('sticky-btn');
   const scheduleSection = document.getElementById('schedule');
-  if (stickyBtn && scheduleSection) {
-    if (scrollY > scheduleSection.offsetTop - 200) {
+  const entrySection = document.getElementById('entry-form');
+
+  if (stickyBtn && scheduleSection && entrySection) {
+    const scheduleTop = scheduleSection.offsetTop - 200;
+    const entryTop = entrySection.offsetTop - window.innerHeight + 100;
+
+    // 「スケジュール通過後」かつ「エントリーフォーム到達前」のみ表示
+    if (scrollY > scheduleTop && scrollY < entryTop) {
       stickyBtn.classList.add('show');
     } else {
       stickyBtn.classList.remove('show');
