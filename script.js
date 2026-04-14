@@ -21,7 +21,7 @@ const speakerData = {
     company: "ThinkingAI", 
     title: "Customer Success Manager", 
     img: "image/mino.webp", 
-    bio: "新卒でパソナグループに入社し農業を経験、その後PayPay株式会社での営業・コミューン株式会社での新規事業専任のインサイドセールス職に従事。現在はシンキングデータ株式会社で1人目のCSMとして日本国内の全ての既存のお客様を担当。ゲームアプリ領域を中心に、ThinkigEngineの活用支援を行っている。" 
+    bio: "新卒でパソナグループに入社し農業を経験、その後PayPay株式会社での営業・コミューン株式会社での新規事業専任のインサイドセールス職に従事。現在はシンキングデータ株式会社で1人目のCSMとして日本国内の全ての既存のお客様を担当。ゲームアプリ領域を中心に、ThinkingEngineの活用支援を行っている。" 
   },
   matsuura: { 
     name: "松浦 遼", 
