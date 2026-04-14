@@ -4,21 +4,21 @@
 const speakerData = {
   paris: { 
     name: "Paris", 
-    company: "ThinkingData", 
+    company: "ThinkingAI", 
     title: "CEO", 
     img: "image/paris.webp", 
     bio: "かつてテンセント・ホールディングスにてデータマイニングおよびビッグデータ分析に携わり、ゲーム業界において10年以上の実務経験を有する。現在は、データドリブンな手法を通じて業界の発展に貢献している。" 
   },
   shiraishi: { 
     name: "白石 陸", 
-    company: "ThinkingData", 
-    title: "Data Analyst", 
+    company: "ThinkingAI", 
+    title: "Senior Consultant, 
     img: "image/shiraishi.webp", 
     bio: "2015年から国際NGO「日本リザルツ」にて国際保健に関する政策提言活動に従事。2016年からはケニアに滞在「スナノミ症対策プロジェクト」を企画・立案・運営。帰国後2019年まで，国際協力機構にて日本企業の海外展開支援に携わる2021年，株式会社デジタルトランスフォーメーション研究所の主任研究員に就任。2022年，null株式会社を設立し、複数の中小企業の経営戦略アドバイザーを務める。2022年，シンキングデータ株式会社に日本人初で入社。データアナリストとして、ゲームアプリのデータ分析およびデータドリブンな運営を支援。執筆協力に『１冊目に読みたいDXの教科書』（SBクリエイティブ）、『ゲームデータアナリティクス』（翔泳社）などがある" 
   },
   mino: { 
     name: "美濃 龍之介", 
-    company: "ThinkingData", 
+    company: "ThinkingAI", 
     title: "Customer Success Manager", 
     img: "image/mino.webp", 
     bio: "新卒でパソナグループに入社し農業を経験、その後PayPay株式会社での営業・コミューン株式会社での新規事業専任のインサイドセールス職に従事。現在はシンキングデータ株式会社で1人目のCSMとして日本国内の全ての既存のお客様を担当。ゲームアプリ領域を中心に、ThinkigEngineの活用支援を行っている。" 
